@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product-formated{
+            background-color: lightgray;
+            width: 23%;
+            margin-left: 10px;
+            margin-top: 10px;
+            float: left;
+        }
+
+        .product-grid{
+            width: 100%;
+        }
+        
+        .product-formated p{
+            padding: 5px 10px;
+        }
+
+        .product-formated img {
+            display: block;
+            margin: 0 auto;
+            max-height: 190px;
+        }
+
+        .title {
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        .content {
+            padding: 10px;
+        }
+
+        .content img {
+            display: block;
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button id="raw">Raw</button>
+    <button id="formated">Formated</button>
+
+    <div class="product"></div>
+    <div class="product-grid"></div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#raw").click(function(){
+                $.ajax("myJsonMultiple.json").done(function(data){
+                    // console.log(data);
+                    $.each(data,function(objectKey,object){
+                        console.log(object)
+                        $.each(object,function(propertyName,value){
+                            // console.log(propertyName);
+                            // console.log(value)
+                            $(".product").append(propertyName + " -> " + value + "<br>")
+                        });
+                        $(".product").append("<br>")
+                    });
+                }).fail(function(error){
+                    console.log(error);
+                });
+            }); 
+            $("#formated").click(function(){
+                $.ajax("myJsonMultiple.json").done(function(data){
+
+                    $.each(data,function(key,val){
+                        var html = "";
+                        html += `<div class='product-formated'><div class='title'>${data[key].Brand} ${data[key].Model} </div>`;
+                        html += `<img src=${data[key].Pic} alt = ${data[key].Pic}>`;
+                        html += `<p>Cores: ${data[key].Cores}</p>`;
+                        html += `<p>Storage: ${data[key].StorageGB}</p>`;
+                        html += `<p>Screen Inches: ${data[key].ScreenSizeInces}</p>`;
+                        html += `<p>Features: ${data[key].Features}</p>`;
+                        html += `</div>`;
+
+                        $(".product-grid").append(html);
+                    })
+                })
+            })
+                
+        })
+    </script>
+
+</body>
+</html>

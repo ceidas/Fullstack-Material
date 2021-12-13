@@ -1,0 +1,39 @@
+Bootstrap
+        What is it?
+                Is a Javascript 
+
+        Sites
+
+        How to use
+                Download it
+                        https://getbootstrap.com/docs/5.1/getting-started/download/
+                Reference the CDN
+                        https://getbootstrap.com/docs/5.1/getting-started/introduction/
+
+        How to start 
+                Make a template to use anytime
+
+        Grid System
+                12 columns
+            
+        Features
+                Navbars
+                Forms
+                Modals
+                Alert boxes
+                Icons
+                Popovers
+                Jumbotrons
+                Tooltips
+                Pagination
+                Progress bars
+        
+        Containers
+                .container-fluid
+                .container 
+
+        Grid System
+                Container
+                        Row
+                                Columns
+        

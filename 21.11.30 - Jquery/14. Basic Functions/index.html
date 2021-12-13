@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .theAddedClass {
+            border: 2px solid grey;
+            background-color: blue;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="button1">Add Class</button>
+    <button id="button2">Remove Class</button>
+    <button id="button3">Toggle Class</button>
+    <button id="button4">Text</button>
+    <button id="button5">Html</button>
+    <button id="button6">Val</button>
+    <button id="button7">Val2</button>
+    <button id="button8">Attr</button>
+    <button id="button9">Append</button>
+    <button id="button10">Prepend</button>
+    <button id="button11">Before</button>
+    <button id="button12">After</button>
+    <button id="button13">Empty</button>
+    <button id="button14">Css</button>
+
+
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eveniet, dolorem blanditiis molestias aliquam
+        repudiandae veniam. Quibusdam asperiores ab laborum odio qui molestias, doloremque inventore fuga et reiciendis
+        cupiditate voluptates.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eveniet, dolorem blanditiis molestias aliquam
+        repudiandae veniam. Quibusdam asperiores ab laborum odio qui molestias, doloremque inventore fuga et reiciendis
+        cupiditate voluptates.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eveniet, dolorem blanditiis molestias aliquam
+        repudiandae veniam. Quibusdam asperiores ab laborum odio qui molestias, doloremque inventore fuga et reiciendis
+        cupiditate voluptates.</p>
+
+    <input type="text" id="myId">
+
+    <img src="dom.png" id="cat" alt="image">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("button1").click(function () {
+                $("p").addClass("theAddedClass");
+            });
+
+            $("#button2").click(function () {
+                $("p").removeClass("theAddedClass");
+            });
+
+            $("#button3").click(function () {
+                $("p").toggleClass("theAddedClass");
+            });
+
+            $("#button4").click(function () {
+                $("p").text("Hello");
+            })
+
+            $("#button5").click(function () {
+                $("p").html("<h2>Hello</h2>")
+            })
+
+            $("#button6").click(function () {
+                var text = $("#myId").val();
+                console.log(text);
+            })
+
+            $("#button7").click(function () {
+                $("#myId").val("Test");
+                console.log(text);
+            })
+
+            $("#button8").click(function () {
+                $("#cat").attr("src", "cat.jpeg")
+            })
+
+            $("#button9").click(function () {
+                $("p").append("<h3>*</h3>")
+            })
+
+            $("#button10").click(function () {
+                $("p").prepend("<h3>$</h3>")
+            })
+
+            $("#button11").click(function () {
+                $("p").before("<h3>*</h3>")
+            })
+
+            $("#button12").click(function () {
+                $("p").after("<h3>$</h3>")
+            })
+            $("#button13").click(function(){
+                $('p').empty();
+            })
+            
+            $("#button14").click(function(){
+                // $("#cat").css("border", "3px solid red")
+                // $("#cat").css("width", "400px")
+                $("#cat").css({
+                    "border": "3px solid red",
+                    "width": "400px"
+                });
+            })
+
+        })
+    </script>
+</body>
+
+</html>

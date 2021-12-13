@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!-- //console.log(window); -->
+    
+    
+    <p id="firstParagraph">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit eum tempora consectetur vitae quidem unde porro a, beatae sequi sunt nesciunt in commodi, sapiente laborum mollitia optio deserunt iste dolor.    
+    </p>
+
+    <p id="secondParagraph">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, dolores blanditiis dicta ad maiores nobis! Quae dolorem esse cupiditate, sit rerum, recusandae quod doloremque deserunt hic expedita voluptatibus vero a.    
+    </p>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>     
+
+    <script>
+        document.getElementById("firstParagraph").addEventListener("click",function(){
+            console.log("Hello from first paragraph");
+        });
+
+        jQuery("#secondParagraph").click(function(){
+            console.log("Hello from second paragraph");
+        });
+    </script>
+
+</body>
+</html>
