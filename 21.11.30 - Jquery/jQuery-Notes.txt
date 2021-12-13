@@ -1,0 +1,149 @@
+what is jQuery?
+    is a javascript library that help us to write Javascript faster with less code
+
+Actually:   
+    It simplifies things like 
+        Ajax calls
+        html events methods
+        Animations
+
+The two versions of jQuery  
+    Production -> minified and compressed
+    Development -> uncompressed and readable code
+
+We can refference jQuery with two ways
+    By downloading the source code
+    By refferencing the corresponding cdn
+
+jQuery selectors
+    i.e. 
+        On JS 
+                document.getElementById("firstParagraph").addEventListener("click", function() {/*Your code*/});
+
+        On jQuery
+                jQuery("#firstParagraph").on("click", function(){/*Your code*/})
+
+        jQuery can be further simplified as
+                jQuery("#firstParagraph").click(function(){/*your code*/})
+
+The $ symbol 
+        A shortcut for jQuery() selector
+                from this -> jQuery
+                to this -> $()
+
+
+How to start
+    $(document).ready(function(){
+        // Your code
+    });
+
+    It allows us to put jQuery on the head section
+
+
+The basic selectors
+    id 
+            $("#firstParagraph")
+    class 
+            $(".thumbnail")
+    element
+            $("p")
+    all 
+            $("*")
+
+jQuery and CSS selectors
+    have the exact same logic
+        i.e.    
+            $("ul li")
+
+Preventing the default behavior of event
+        i.e.
+            $("a").click(function(e){
+                e.preventDefault();
+            })
+
+Alternative syntax 
+        instead of: 
+            $(document).ready(function(){
+                alert("Hello")
+            });
+
+        you can write this (exact the same):
+            $(document).ready(() => {
+                alert("Hello");
+            })
+
+Basic Functions
+        hide()
+        show()
+        toggle()
+
+Basic Events 
+        mouseEnter()
+        mouseLeave()
+        on("eventName",function(){/* Your Code */})
+        click()
+
+Multiple Events Handler
+    $("p").on(
+        {
+                mouseenter:function(){
+                    console.log("The curson touched the paragraph");
+                },
+                mouseleave:function(){
+                    console.log("The cursor left the paragraph);
+                },
+                click:function(){
+                    console.log("The cursor clicked the paragraph");
+                }
+        });
+
+Animations
+        fadeIn()
+        fadeOut()
+        animate()
+        hide(speed)
+        show(speed)
+    
+Basic Functions 
+        text()
+        html()
+        val()
+        attr()
+        append()
+        prepend()
+        after()
+        before()
+        empty()
+        addClass()
+        removeClass()
+        toggleClass()
+        css()
+
+15. Dimensions
+        width()
+        height()
+        innerWidth()
+        innerHeight()
+        outerWidth()
+        outerHeight()
+
+16. DOM Traversing
+        parent()
+        parents()
+        parentsUntil()
+        childer()
+        find()
+        simbling()
+        next()
+        nextUntil()
+        prev()
+        prevUntil()
+        closest()
+        wrap()
+
+Cheatsheet
+        https://www.oscarotero.com/jquery
+
+Practice
+        Sololearn jquery
+        freecodecamp

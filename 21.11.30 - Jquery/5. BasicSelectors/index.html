@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="firstParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus expedita asperiores id dicta quis veritatis vitae hic nobis cumque dolorum aperiam, placeat quam, quas soluta in nostrum autem consequuntur?</p>
+
+    <img width="200" src="dom.png" class="thumbnail">
+    <img width="200" src="dom.png" class="thumbnail">
+    <h3>Title</h3>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>     
+
+    <script>
+        $(document).ready(function(){
+            $("#firstParagraph").click(function(){
+                console.log("Hi from first paragraph");
+            });
+
+            $(".thumbnail").click(function(){
+                console.log("Hello from PizzaStore");
+            });
+
+            $("h3").click(function(){
+                console.log("Hello from h3");
+            });
+
+        })
+    </script>
+</body>
+</html>

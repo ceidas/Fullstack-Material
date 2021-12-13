@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        .product-formated {
+            background-color: lightgray;
+            width: 30%;
+        }
+
+        .product-formated p {
+            padding: 5px 10px;
+        }
+
+        .product-formated img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="raw">Click</button>
+    <button id="formated">formated</button>
+    <div id="product"></div>
+    <div class="product-formated"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#raw").click(function () {
+                $.ajax({
+                    url: "myJson.json"
+
+                }).done(function (data) {
+                    console.log(data);
+
+                    $.each(data, function (key, val) {
+                        $("#product").append(key + " -> " + val + "<br>");
+                    })
+
+                }).fail(function (error) {
+                    console.log(error);
+                });
+            });
+
+            $("#formated").click(function () {
+                $.ajax("myJson.json").done(function (data) {
+                    console.log("elis")
+                    console.log(data)
+                    $(".product-formated").append("<div class = 'title'>" + data.Brand + "" + data.Model + "</div>");
+                    $(".product-formated").append('<img src="' + data.Pic + '" alt="' + data.Pic + '">');
+                    $(".product-formated").append(`<p>Cores: ${data.Cores} </p>`);
+                    $(".product-formated").append(`<p>Storage: ${data.StorageGB} </p>`);
+                    $(".product-formated").append(`<p> Screen Inches: ${data.ScreenSizeInces}</p>`)
+                    $(".product-formated").append(`<p>Features: ${data.Features}</p>`)
+                    
+                }).fail(function(error){
+                    console.log("Something went wrong " + error.statusText)
+                })
+            })
+        })
+    </script>
+
+</body>
+
+</html>

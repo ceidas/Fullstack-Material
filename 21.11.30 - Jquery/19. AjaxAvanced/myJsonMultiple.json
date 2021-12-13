@@ -1,0 +1,41 @@
+[
+    {
+        "Brand": "Samsung",
+        "Model": "Galaxy",
+        "Pic": "s8.jpg",
+        "Cores":"6",
+        "StorageGB":"64",
+        "ScreenSizeInces":"5.8",
+        "Features":["SMS", "MMS", "Email" , "Push", "IM"]
+    },
+    
+    {
+        "Brand": "Xiaomi",
+        "Model": "Galaxy",
+        "Pic": "s8.jpg",
+        "Cores":"6",
+        "StorageGB":"64",
+        "ScreenSizeInces":"5.8",
+        "Features":["SMS", "MMS", "Email" , "Push", "IM"]
+    },
+    
+    {
+        "Brand": "Samsung1",
+        "Model": "Galaxy",
+        "Pic": "s8.jpg",
+        "Cores":"6",
+        "StorageGB":"64",
+        "ScreenSizeInces":"5.8",
+        "Features":["SMS", "MMS", "Email" , "Push", "IM"]
+    },
+    
+    {
+        "Brand": "Samsung2",
+        "Model": "Galaxy",
+        "Pic": "s8.jpg",
+        "Cores":"6",
+        "StorageGB":"64",
+        "ScreenSizeInces":"5.8",
+        "Features":["SMS", "MMS", "Email" , "Push", "IM"]
+    }
+]
