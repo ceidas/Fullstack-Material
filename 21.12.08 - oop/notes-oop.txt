@@ -1,9 +1,0 @@
-var - 6;
-functino sum(a,b){
-
-}
-
-Onject is a collectino of variables and functions
-Those variables that belong to an object are called properties
-Those functions the belong to an object are called methods (behavior)
-The style of programming that is driven by 
