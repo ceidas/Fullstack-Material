@@ -1,0 +1,273 @@
+this keyboard
+    'this' keyboard is an object 
+    by default -> is the window object 
+    If 'this' keyword is inside a function and we add the new keyword -> it is the actual object of function
+    If 'this' keyboard is inside a dunction and we DON'T add the new keyword AND WE ARE in strict mode -> it is undefined
+    Arrow functions don't have 'this' keyboard
+    If we want to get always the window object we can use globalThis
+    'this' keyboard can be usefull when we want to apply 'chaining' in our method
+
+Ways of building an object
+    1. object literal syntax
+                let user1 = {
+                    email: "user1@domain.com",
+                    password: "passuser1",
+                    login: function(){
+                        console.log("User1 Logged In!")
+                    }
+                }
+                console.log(user1);
+
+    2. factory method syntax
+                function createUser2(email, password){
+                    return{
+                        email,
+                        password,
+                        login: function(){
+                            console.log("User2 Logged")
+                        }
+                    }
+                }
+                let user2 = createUser2("user@domain.com","passuser2")
+
+
+    3. constructor syntax
+                function User(email, password){
+                    this.email = email;
+                    this.password = password;
+                    this.login = function(){
+                        console.log("User Logged In!")
+                    }
+                }
+                let user3 = new User("user3@domain.com", "passuser3")
+
+    4. class 
+                class User{
+                    constructor(email, password){
+                        this.email = email;
+                        this.password = password;
+                    }
+                    login() {
+                        console.log("User Logged In!")
+                    }
+                }
+                let user4 = new User("user4@domain.com", "passuser4");
+
+
+    5. object.create()
+                let user5 = Object.create(user2); //if we add an object with factory syntax it adds the members on the prototype
+
+    6. object.assign()
+                let user6 = Object.assign(user2); If we add an object with factorysyntax it adds the members on the object body
+
+
+Object values and Object.keys
+        let values = Object.values(user2); //Return the values of object body (Not prototype)
+        let keys = Object.keys(user2) //Returns the keys of object body(Not prototype)
+
+
+Ways of accessing a property of an object
+        dot notation 
+            user3.email
+        backets notation
+            user3['email']
+
+
+Getters and Setters
+        Setter's responsibility is to do something (regarding property or not) when we assign a value to a property
+        Getter's responsibility is to return a value (actula or edited) of property when we access it 
+
+        object literal syntax
+
+                let user1 = {
+                            email: "user1@domain.com",
+                            password: "passuser1",
+                            _fullName: "",
+                            set fullName(value){
+                                this._fullName = value.toUpperCase();
+                            },
+                            get fullName(){
+                                return this._fullName;
+                            },
+                            login: function(){
+                                console.log("User1 Logged In!")
+                            }
+                }
+                console.log(user1);
+        
+
+        factory syntax
+
+                function createUser2(email, password, _fullName){
+                    return{
+                        email,
+                        password,
+                        _fullName,
+                        set fullName(value){
+                            this._fullName = value;
+                        },
+                        get fullName(){
+                            return this._fullName.toUpperCase();
+                        },
+                        login: function(){
+                            console.log("User2 Logged")
+                        }
+                    }
+                }
+                let user2 = createUser2("user@domain.com","passuser2", "takis bekas")
+        
+        Constructor syntax
+                
+              class User10 {
+                    #_fullName 
+                    constructor(email, password, fullName) {
+                        this.email = email;
+                        this.password = password;
+                        this.fullName = fullName;
+                    }
+                    set fullName(value) {
+                        this.#_fullName = value.toUpperCase();
+                    }
+                    setFullName(value) {
+                        this.#_fullName = value.toUpperCase();
+                    }
+                    get fullName() {
+                        return this.#_fullName
+                    }
+                    login() {
+                        console.log("User Logged In!");
+                    };
+                }
+            let user10 = new User("user3@domain.com", "a.8772", "Takis Bekas");
+            user10.fullName = "Tadeeee";
+            user10.setFullName('Tade');
+
+            Another Example
+
+                    class Circle{
+                        #area
+                        #perimeter
+                        constructor(radius){
+                            this.radius = radius
+                        }
+
+                        get area(){
+                            // return Math.PI*this.radius*this.radius;
+                            this.#area = Math.PI*(this.radius*this.radius);
+                            return this.#area;
+                        }
+
+                        get perimeter(){
+                            // return 2 * Math.PI * this.radius;
+                            this.#perimeter = 2 * Math.PI * this.radius;
+                            return this.#perimeter;
+                        }
+                    }
+
+                    let circle = new Circle(1);
+                    circle.perimeter
+
+
+The four pillars of OOP
+            Encapsulation
+                    When we group cariables and functions to a whole unit (object)
+            Abstraction
+                    When we hide details and show only the essentials (with a variety of techniques)
+            Inheritance 
+                    A technique that allow us to eliminate redundancy code. We accomplish this by creating an object that has some basic members
+                            We can inherit these members (properties, methods) into other objects with inheritance technique 
+            Polymorphism
+                    Is a technique where we can represent (with the help of inheritance) an object with many forms
+
+                    i.e If a developer object inherits from a Person object, this object is both Developer and Person 
+
+Uncle Bob quote
+            The best functions are those with no parameters
+
+
+            // Functional Programming 
+            let baseSalary = 1000;
+            let overtime = 10;
+            let rate = 20;
+
+            function getWage(bageSalary, overtime,rate){
+                return baseSalary + (overtime*rate);
+            }
+
+            // With OOP
+            let employee = {
+                baseSalary: 1000,
+                overTime: 10,
+                rate: 20, 
+                getWaqe: function(){
+                    return this.baseSalary + (this.overtime * this.rate);
+                }
+            };
+            employee.getWage();
+
+            Enumerating the properties
+                for(let key in circle){
+                    console.log(key);
+
+                }
+            
+                for(let key in circle){
+                    console.log(key, circle[key]);
+                }
+
+                let key = Object.keys(circle);
+
+                if('radius' in circle)
+                    console.log('circel has radius');
+
+Inheritance 
+        We have two types of inheritance 
+                classical (on other languages)
+                Prototypical (On JavaScript)
+
+What is 
+        Is a technique where we can inherit members (properties, methods) from a base object to sub objects
+        i.e.    
+                Shape -> Circle, Square
+
+Prototypes and Prototypical Inheritance 
+        A prototype is essentially a parent of another object
+        Create an onbject like this 
+                let x = {};
+        Print it 
+                console.log(x);
+        Expand the prototype
+                You will see the inherited methods
+        Create a second object y in the same Ways
+        Both x and y inherit from Object object
+        Get prototype of an object 
+                object.getPrototypeOf(x);
+
+        Members behavior 
+                When we access a member, JavaScipt by default searches on object's body 
+                If JavaScipt won't find something then it searches on object's prototype
+
+                    i.e. circle.area();
+
+Multi level inheritance 
+        Type this   
+                let myArray = [];
+        Expand the proto 
+                You will find all the methods of the array
+        Expand the proto property of the array      
+                You will find all the methods of Object object (base object)
+        Conclusion 
+                array inherits from Array object and Array object inherits from base object. We typically call this multi-level inheritance.
+
+Property Descriptors 
+        Type this   
+                let person = {name: "Panos"};
+
+                for (let key in person) {
+                    console.log(key);
+                }
+        
+        The reason we cannot see the systemic members is that systemic members are NOT enumerable
+
+        let objectBase = Object.getPrototypeOf(person);
+        let descriptor = Object.getOwnPropertyDescriptor(objectBase, 'toString')
