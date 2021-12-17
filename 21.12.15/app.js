@@ -140,3 +140,12 @@ delete myArticle.name; //Book: Single Page Web Applications
 //but we can change the value of the name property
 myArticle.name = "Testable JS";
 console.log(myArticle.name); //Book: Testable JS
+
+
+let details = {
+    firstName: "Lisandros",
+    lastName: "Elis",
+    myFunction: function(){
+        return this.firstName;
+    }
+}

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Demo</title>
-    <link href="style.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet" />
 </head>
+
 <body>
     <h2 class="center-align">My Form Demo</h2>
     <hr />
@@ -15,11 +17,11 @@
         <form action="" id="myForm" novalidate method="POST">
             <div class="error" id="coursenameValidation"></div>
             <label for="coursename">Name:</label>
-            <input pattern="[CB].+" type="text" name="coursename" id="coursename" required/>
+            <input pattern="[CB].+" type="text" name="coursename" id="coursename" required />
 
             <div class="error" id="streamValidation"></div>
             <label for="stream">Stream:</label>
-            <input type="text" name="stream" id="stream" required/>
+            <input type="text" name="stream" id="stream" required />
 
             <div class="error" id="passwordValidation"></div>
             <label for="password">Password (Enrollment Key):</label>
@@ -27,11 +29,11 @@
 
             <div class="error" id="startdateValidation"></div>
             <label for="startdate">Start Date:</label>
-            <input type="date" name="startdate" id="startdate" required/>
+            <input type="date" name="startdate" id="startdate" required />
 
             <div class="error" id="enddateValidation"></div>
             <label for="enddate">End Date:</label>
-            <input type="date" name="enddate" id="enddate" required/>
+            <input type="date" name="enddate" id="enddate" required />
 
             <button id="submit" type="submit">Submit</button>
         </form>
@@ -42,4 +44,5 @@
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
