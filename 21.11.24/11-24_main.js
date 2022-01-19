@@ -10,24 +10,18 @@
 
 
 //2./////////////////////////////////////////
-function lessThanOrEqualToZero(number){
-    if(number>0){
+function lessThanOrEqualToZero(number) {
+    if (number > 0) {
         return false;
 
-    }
-    else
-    {
+    } else {
         return true;
 
     }
 }
 var userInput = prompt("Enter a number");
-while(isNaN(userInput))
-{
+while (isNaN(userInput)) {
     userInput = prompt("Enter a number");
 }
 
-alert(lessThanOrEqualToZero(userInput)); 
-
-
-
+alert(lessThanOrEqualToZero(userInput));
